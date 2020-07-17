@@ -17,6 +17,7 @@
 }
 
 .pizza-delivery button {
+    cursor: pointer;
     background: crimson;
     color: whitesmoke;
     font-size: 1.2rem;
