@@ -6,18 +6,32 @@ import Home from "./components/Home";
 import Form from "./components/Form";
 
 const App = () => {
-  const {pizzaOrder, setPizzaOrder} = useState({
+  const [pizzaOrder, setPizzaOrder] = useState({
     name: "",
     size: "",
-    toppings: [],
+    pepperoni: false,
+    ham: false,
+    olives: false,
+    onion: false,
     specialInstructions: "",
   })
+  const onInputChange = e =>{
+    let value = e.target.value;
+    if(e.target.type === "checkbox") value = e.target.checked;
+    setPizzaOrder({
+      ...pizzaOrder,
+      [e.target.name]: value
+    })
+  }
+  console.log(pizzaOrder)
   return (
     <>
-     <Header/>
-     <Router>
-       <Route exact path="/" component={Home}/>
-       <Route path="/pizza" component={Form}/>
+      <Header/>
+      <Router>
+        <Route exact path="/" component={Home}/>
+        <Route path="/pizza">
+          <Form onInputChange={onInputChange}/>
+        </Route>
      </Router>
     </>
   );
