@@ -1,11 +1,14 @@
 import React from "react";
+import * as Yup from "yup"
 
 import "../styles/form.css";
+
+
 
 export default function Form(props){
     return (
         <div className="build-pizza">
-            <form>
+            <form onSubmit={props.submit}>
                 <img width="100%" src="https://images7.alphacoders.com/690/690886.jpg"/>
                 <h1>Build Your Pizza</h1>
                 <section>
@@ -23,7 +26,7 @@ export default function Form(props){
                     </div>
                     <label htmlFor="size">Size: </label>
                     <select onChange={props.onInputChange} id="size" name="size">
-                        <option value="small">Small</option>
+                        <option defaultValue value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
@@ -34,16 +37,16 @@ export default function Form(props){
                         <small>choose up to 4</small>
                     </div>
                     <label htmlFor="pepperoni">
-                       Pepperoni <input onChange={props.onInputChange} name="pepperoni" id="pepperoni" type="checkbox"/>
+                       Pepperoni <input checked={props.pizzaOrder.pepperoni} onChange={props.onInputChange} name="pepperoni" id="pepperoni" type="checkbox"/>
                     </label>
                     <label htmlFor="olives">
-                       Olives <input onChange={props.onInputChange} name="olives"  id="olives" type="checkbox"/>
+                       Olives <input checked={props.pizzaOrder.olives} onChange={props.onInputChange} name="olives"  id="olives" type="checkbox"/>
                     </label>
                     <label htmlFor="ham">
-                       Ham <input onChange={props.onInputChange}name="ham"  id="ham" type="checkbox"/>
+                       Ham <input checked={props.pizzaOrder.ham} onChange={props.onInputChange}name="ham"  id="ham" type="checkbox"/>
                     </label>
                     <label htmlFor="onion">
-                       Onion <input onChange={props.onInputChange} name="onion"  id="onion" type="checkbox"/>
+                       Onion <input checked={props.pizzaOrder.onion} onChange={props.onInputChange} name="onion"  id="onion" type="checkbox"/>
                     </label>
                 </section>
                 <section>
@@ -53,6 +56,9 @@ export default function Form(props){
                     <label htmlFor="specialInstructions">Special instructions: </label>
                     <input value={props.pizzaOrder.specialInstructions} onChange={props.onInputChange} name="specialInstructions" id="specialInstructions" type="text"/>
                 </section>
+                <div className="errors">
+                    {props.errors.name}
+                </div>
                 <button>Add to Order</button>
             </form>
         </div>
