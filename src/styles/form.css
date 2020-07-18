@@ -1,0 +1,39 @@
+form {
+    width: 90vw;
+    max-width: 600px;
+    border: 1px solid lightgrey;
+    margin: 0 auto;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+form h1 {
+    padding: 0 2vh;
+}
+
+.form-heading {
+    background: darkgrey;
+    color: whitesmoke;
+    padding: 2vh;
+    margin: 4vh 0;
+}
+
+.form-heading h2 {
+    margin: 0;
+}
+
+form label {
+    padding: 0 2vh;
+}
+
+form button {
+    margin: 5vh 0 0 2vh;
+    cursor: pointer;
+    background: crimson;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 5px 5px rgb(170, 42, 67);
+}

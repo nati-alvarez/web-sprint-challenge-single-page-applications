@@ -1,0 +1,28 @@
+.home .pizza-delivery {
+    min-height: 40vh;
+    background: url("https://img.freepik.com/free-photo/tasty-pepperoni-pizza-black-concrete-background_79782-102.jpg?size=626&ext=jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pizza-delivery h1 {
+    color: whitesmoke;
+    font-size: 2rem;
+    text-shadow: 5px  2px black;
+    margin-top: 0;
+}
+
+.pizza-delivery button {
+    cursor: pointer;
+    background: crimson;
+    color: whitesmoke;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    box-shadow: 5px 5px rgb(170, 42, 67);;
+}
