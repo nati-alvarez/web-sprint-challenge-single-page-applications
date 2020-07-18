@@ -30,7 +30,7 @@ const App = () => {
       <Router>
         <Route exact path="/" component={Home}/>
         <Route path="/pizza">
-          <Form onInputChange={onInputChange}/>
+          <Form pizzaOrder={pizzaOrder} onInputChange={onInputChange}/>
         </Route>
      </Router>
     </>

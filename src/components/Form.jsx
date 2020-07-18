@@ -14,7 +14,7 @@ export default function Form(props){
                         <small>required</small>
                     </div>
                     <label htmlFor="name">Name: </label>
-                    <input onChange={props.onInputChange} id="name" name="name" type="text"/>
+                    <input value={props.pizzaOrder.name} onChange={props.onInputChange} id="name" name="name" type="text"/>
                 </section>
                 <section>
                     <div className="form-heading">
@@ -51,7 +51,7 @@ export default function Form(props){
                         <h2>Anything Else?</h2>
                     </div>
                     <label htmlFor="specialInstructions">Special instructions: </label>
-                    <input onChange={props.onInputChange} name="specialInstructions" id="specialInstructions" type="text"/>
+                    <input value={props.pizzaOrder.specialInstructions} onChange={props.onInputChange} name="specialInstructions" id="specialInstructions" type="text"/>
                 </section>
                 <button>Add to Order</button>
             </form>
